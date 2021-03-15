@@ -1,0 +1,18 @@
+# environment
+.env
+
+# dependencies
+/node_modules
+/package-lock.json
+
+# IDE - VSCode
+.VSCode/
+
+# misc
+npm-debug.log
+
+# System files
+.DS_Store
+.DS_Store/
+Thumbs.ds
+/nbproject/private
