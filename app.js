@@ -6,6 +6,8 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 const startCron = require('./controllers/indexController');
 const indexRouter = require('./routes/index');
+const swaggerUi = require('swagger-ui-express'),
+swaggerDocument = require('./swagger.json');
 
 const app = express();
 
@@ -34,6 +36,9 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 setTimeout(() => {
   startCron.startCronjob();
 }, 500)
+
+/** Swagger enables */
+app.use('/api', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 /** Routes enables */
 app.use('/', indexRouter);

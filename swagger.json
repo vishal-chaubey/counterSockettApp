@@ -1,0 +1,76 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Socket counter app with demo get API",
+        "description": "Creating entry on every two second in mongoDB and sending this through socket notifications",
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        }
+    },
+    "host": "localhost:3001",
+    "basePath": "/",
+    "tags": [
+        {
+            "name": "Random",
+            "description": "API for random data created listing"
+        }
+    ],
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/": {
+            "get": {
+                "tags": [
+                    "Random String"
+                ],
+                "summary": "Get all generated string by cron",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Randoms"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Random": {
+            "required": [
+                "string",
+                "_id",
+                "type",
+                "createdAt"
+            ],
+            "properties": {
+                "_id": {
+                    "type": "string",
+                    "uniqueItems": true
+                },
+                "string": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "createdAt": {
+                    "type": "date"
+                }
+            }
+        },
+        "Randoms": {
+            "type": "array",
+            "$ref": "#/definitions/Random"
+        }
+    }
+}
