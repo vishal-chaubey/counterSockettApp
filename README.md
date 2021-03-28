@@ -1,4 +1,4 @@
-# counterSockettApp
+# counterSocketApp
 
 ## Table of contents
 * [General info](#general-info)
@@ -7,7 +7,12 @@
 * [API docs can see](#API-docs-can-see)
 
 ## General info
-This is a dummy project that create entry every second in DB (Mongodb) by cron job and also send notification by socket while creating entry in db and craeted a get api to see all created data, can be see API docs on swagger (As swagger added for API docs in this project) also written test cases for functions
+This Project consist of
+* App that create entry every second in DB (Mongodb) by cron job
+* Send notification by socket while creating entry in db 
+* API to get all created data, 
+* API documentation on swagger 
+* Test cases for each functions
 	
 ## Technologies
 Project is created with:
